@@ -1,0 +1,13 @@
+Package: XRexamples
+Type: Package
+Title: Extending R: Examples
+Version: 0.5
+Date: 2015-09-24
+Author: John M. Chambers
+Maintainer: John Chambers <jmc@r-project.org>
+Description: Examples for, or inspired by, the book "Extending R"
+License: GPL (>=2)
+Imports: methods, codetools
+Collate: dataTable.R dataEdit.R
+NeedsCompilation: no
+Packaged: 2015-09-21 21:35:40 UTC; jmc
