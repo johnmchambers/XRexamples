@@ -19,6 +19,8 @@ instead of requiring that it already be one.'
            callSuper(...)
        else
            callSuper(..., data = as(data, "environment"))
+        if(is.null(row.names)) # likely the data arg was a data.frame
+            row.names <<- base::row.names(data)
    })
 
 setMethod("[",
@@ -28,14 +30,14 @@ setMethod("[",
         if(missing(j))
             j <- objects(x$data)
         if(!is.character(j))
-            stop(gettextf("Variables in a dataTable can only be referenced by name, by %s",
+            stop(gettextf("Variables can only be referenced by name, not by %s",
                           XR::nameQuote(class(j)[[1]])))
+        if(missing(i))
+            i <- seq_along(x$row.names)
         value <- lapply(j, function(var) { y <- get(var, envir = x$data); y[i]})
         names(value) <- j
-        rownames <- x$row.names
-        if(is.null(rownames) && length(j)>0) rownames <- seq_along(get(j[[1]], envir = x$data))
-        class(value) <- "data.frame"
-        attr(value, "row.names") <- rownames[i]
+        value <- as.data.frame(value)
+        row.names(value) <- x$row.names[i]
         value
     }
 )
@@ -44,6 +46,8 @@ setMethod("[<-",
     signature(x = "dataTable"),
     function (x, i, j, ..., value)
     {
-        stop("Subset replacement is not allowed for this class:  consider \"data.Edit\"")
+        stop(gettextf(
+          "No subset replacement for class %s; use %s methods",
+           dQuote(class(x)), '"data.edit"'))
     }
 )
