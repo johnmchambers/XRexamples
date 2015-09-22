@@ -12,7 +12,7 @@ dataTable <- setRefClass("dataTable",
 )
 
 dataTable$methods(
-    initialize = function(..., data) {
+    initialize = function(..., data = data.frame()) {
         'This method takes \\code{data=} as a named argument, but coerces it to be an environment,
 instead of requiring that it already be one.'
        if(missing(data))
@@ -51,3 +51,18 @@ setMethod("[<-",
            dQuote(class(x)), '"data.edit"'))
     }
 )
+
+dataSave <- setRefClass("dataSave",
+   fields = c( saved = "dataTable", time = "DateTime")
+   )
+
+dataSave$lock(c("saved", "time"))
+
+dataSave$methods(
+    initialize = function(data, ...) {
+        if(!missing(data)) {
+            saved <<- data$copy()
+            time <<- Sys.time()
+        }
+        callSuper(...)
+    })

@@ -1,7 +1,9 @@
 import(methods)
-export(dataTable, dataEdit)
+export(dataTable, dataEdit, dataSave)
 
-exportClass(dataTable, dataEdit)
+exportClass(dataTable, dataEdit, dataSave)
+exportClass(DateTime)
+
 
 
 
