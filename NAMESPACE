@@ -4,6 +4,8 @@ export(dataTable, dataEdit, dataSave)
 exportClass(dataTable, dataEdit, dataSave)
 exportClass(DateTime)
 
+export(degree, track)
+exportClass(degree, track)
 
 
 

@@ -8,6 +8,6 @@ Maintainer: John Chambers <jmc@r-project.org>
 Description: Examples for, or inspired by, the book "Extending R"
 License: GPL (>=2)
 Imports: methods, codetools
-Collate: DateTime.R dataTable.R dataEdit.R
+Collate: DateTime.R dataTable.R dataEdit.R track.R
 NeedsCompilation: no
 Packaged: 2015-09-21 21:35:40 UTC; jmc
