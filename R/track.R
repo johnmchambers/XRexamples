@@ -24,3 +24,12 @@ setMethod("initialize", "track",
         .Object@long <- degree(long)
         callNextMethod(.Object, ...)
     })
+
+setMethod("show", "track",
+          function(object) {
+              xx <-  rbind(.object@lat, .object@long,
+                           format(object@time))
+              dimnames(xx) <- list(c("Lat.", "Long.", "Time"),
+                                   rep("", ncol(xx)))
+              show(xx)
+          })
