@@ -23,6 +23,14 @@ instead of requiring that it already be one.'
             row.names <<- base::row.names(data)
    })
 
+dataTable$methods(
+    show = function() {
+      cat(gettextf("dataTable with %d rows\nVariables:\n",
+                   length(row.names)))
+      base::show(objects(data))
+    })
+
+      
 setMethod("[",
     signature(x = "dataTable"),
     function (x, i, j, ..., drop = TRUE)
