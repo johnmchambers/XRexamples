@@ -9,7 +9,5 @@ export(degree, track)
 exportClass(degree, track)
 export(flowers, fillIn)
 
-
-
-
-
+importFrom(codetools, makeCodeWalker, walkCode)
+export(codeCountA, codeCountW)
