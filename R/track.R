@@ -33,3 +33,8 @@ setMethod("show", "track",
                                    rep("", ncol(xx)))
               show(xx)
           })
+
+GPStrack <- setClass("GPStrack",
+  slots = c(alt = "numeric"),
+  contains = "track")
+

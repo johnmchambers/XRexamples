@@ -6,8 +6,13 @@ exportClass(dataTable, dataEdit, dataSave)
 exportClass(DateTime)
 
 export(degree, track)
-exportClass(degree, track)
+exportClass(degree, track, GPStrack)
 export(flowers, fillIn)
 
 importFrom(codetools, makeCodeWalker, walkCode)
 export(codeCountA, codeCountW)
+
+export(datedText, datedVector, datedTable, datedList)
+exportClass(datedText, datedVector, datedTable, datedList)
+
+exportClass(city, optionalCity)

@@ -19,7 +19,7 @@ so that computations with them use reference semantics
 \section{Methods}{
 
 \describe{
-\item{\code{initialize(..., data)}}{This method takes \code{data=} as a named argument, but coerces it to be an environment,
+\item{\code{initialize(..., data = data.frame())}}{This method takes \code{data=} as a named argument, but coerces it to be an environment,
 instead of requiring that it already be one.}
 }}
 
