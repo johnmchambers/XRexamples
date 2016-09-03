@@ -16,3 +16,6 @@ export(datedText, datedVector, datedTable, datedList)
 exportClass(datedText, datedVector, datedTable, datedList)
 
 exportClass(city, optionalCity)
+
+export(montyHall)
+

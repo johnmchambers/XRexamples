@@ -9,6 +9,6 @@ Description: Examples for, or inspired by, the book "Extending R"
 License: GPL (>=2)
 Imports: methods, codetools
 Collate: DateTime.R dataTable.R dataEdit.R track.R flowers.R fillIn.R codeCountA.R codeCountW.R
-	 datedClasses.R
+	 datedClasses.R recursiveUnionCity.R montyHall.R
 NeedsCompilation: no
 Packaged: 2015-09-21 21:35:40 UTC; jmc
